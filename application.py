@@ -1,8 +1,8 @@
 from flask import Flask, escape, request
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route('/')
+@app.route('/')
 def hello():
     name = request.args.get("name", "World")
     greeting = "Secure hello" if request.url.startswith('https://') else "Non-secure hello"
